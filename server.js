@@ -63,6 +63,8 @@ const getNextAvailableRow = async () => {
 // Form submission route
 app.post('/submit-form', async (req, res) => {
   const formData = req.body;
+  
+  console.log('Received form data:', formData);  // Log the received form data
 
   // Validate form data
   const validationError = validateFormData(formData);
