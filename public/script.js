@@ -48,8 +48,6 @@ document.getElementById('registration-form').addEventListener('submit', function
       .then(response => {
         if (response.ok) {
           alert(`Thank you for registering, ${firstName} ${lastName}!`);
-          // Optionally reset the form
-          document.getElementById('registration-form').reset();
         } else {
           alert('Error submitting the form. Please try again.');
         }
