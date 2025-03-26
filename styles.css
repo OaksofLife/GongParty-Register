@@ -2,18 +2,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('images/canadian-flag.jpg'); /* Path to your image */
-    background-size: cover; /* Ensures the image covers the entire viewport */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Makes the image stay fixed when scrolling */
+    background-image: url('images/canadian-flag.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   .container {
     width: 50%;
     margin: 40px auto;
     padding: 20px;
-    background-color: rgba(211, 211, 211, 0.4);
+    background-color: rgba(211, 211, 211, 0.6);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -78,3 +78,12 @@ body {
     display: inline-block;
   }
   
+  .consent-label {
+    display: inline-block;
+    vertical-align: top; 
+    max-width: 600px; 
+  }
+
+  #submit-btn {
+    margin: 20px auto;
+  }
