@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Validate environment variables
-const credentials = process.env.credentials_json ? JSON.parse(process.env.credentials_json) : null;
+const credentials = process.env['credentials.json'] ? JSON.parse(process.env['credentials.json']) : null;
 if (!credentials || !credentials.client_email || !credentials.private_key) {
   console.error('Google Sheets credentials are missing or invalid.');
   process.exit(1);
