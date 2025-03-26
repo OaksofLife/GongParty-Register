@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gong Party Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gong Party Registration</h1>
+    <p class="slogan">Join the movement for change!</p>
+    
+    <form id="registration-form">
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" name="first-name" required>
+
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" name="last-name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required>
+
+      <label for="province">Province:</label>
+      <select id="province" name="province" required>
+        <option value="">Select Province</option>
+        <option value="AB">Alberta</option>
+        <option value="BC">British Columbia</option>
+        <option value="MB">Manitoba</option>
+        <option value="NB">New Brunswick</option>
+        <option value="NL">Newfoundland and Labrador</option>
+        <option value="NS">Nova Scotia</option>
+        <option value="ON">Ontario</option>
+        <option value="PE">Prince Edward Island</option>
+        <option value="QC">Quebec</option>
+        <option value="SK">Saskatchewan</option>
+      </select>
+
+      <label for="postal-code">Postal Code:</label>
+      <input type="text" id="postal-code" name="postal-code" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <div class="citizenship">
+        <label>
+          <input type="radio" name="citizenship" value="citizen" id="citizen"> Citizen
+        </label>
+        <label>
+          <input type="radio" name="citizenship" value="pr" id="pr"> Permanent Resident
+        </label>
+      </div>
+
+      <label>
+        <input type="checkbox" id="disclosure" name="disclosure">
+        I voluntarily disclose the above information. I am not a member of any other federal political party. Please send me more information about Gong Party.
+      </label>
+
+      <button type="submit">Submit</button>
+    </form>
+    
+    <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
