@@ -25,7 +25,7 @@ body {
   
   .slogan {
     text-align: center;
-    color: #777;
+    color: #ff0000;
     font-size: 18px;
   }
   
@@ -78,7 +78,7 @@ body {
     display: inline-block;
   }
   
-  .consent-label {
+  #disclosure {
     display: inline-block;
     vertical-align: top; 
     max-width: 600px; 
