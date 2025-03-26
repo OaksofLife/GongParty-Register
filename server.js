@@ -32,7 +32,7 @@ app.post('/submit-form', async (req, res) => {
   try {
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: spreadsheetId,
-      range: 'Sheet1!A1',  // Sheet name and range to start appending data
+      range: 'Sheet1!A2',
       valueInputOption: 'RAW',
       resource: {
         values: [
