@@ -80,7 +80,8 @@ body {
   
   .citizenship {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 10px; /* Adjust this value for desired spacing */
   }
   
   .citizenship label {
