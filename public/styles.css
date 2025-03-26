@@ -27,6 +27,7 @@ body {
     text-align: center;
     color: #ff0000;
     font-size: 18px;
+    font-style: bold;
   }
   
   form {
@@ -76,12 +77,6 @@ body {
   
   .citizenship label {
     display: inline-block;
-  }
-  
-  #disclosure {
-    display: inline-block;
-    vertical-align: top; 
-    max-width: 600px; 
   }
 
   #submit-btn {

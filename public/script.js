@@ -23,7 +23,40 @@ document.getElementById('registration-form').addEventListener('submit', function
       alert('You must agree to the disclosure.');
       return;
     }
-  
-    alert(`Thank you for registering, ${firstName} ${lastName}!`);
-  });
+
+    const formData = {
+        firstName,
+        lastName,
+        email,
+        phoneNumber: phone,
+        address,
+        city,
+        province,
+        postalCode,
+        dateOfBirth: dob,
+        citizenship: citizen ? 'Citizen' : 'PR',
+      };
+    
+      // Send form data to the server
+      fetch('/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      .then(response => {
+        if (response.ok) {
+          alert(`Thank you for registering, ${firstName} ${lastName}!`);
+          // Optionally reset the form
+          document.getElementById('registration-form').reset();
+        } else {
+          alert('Error submitting the form. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error submitting the form. Please try again.');
+      });
+    });
   
