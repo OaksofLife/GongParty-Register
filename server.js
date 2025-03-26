@@ -13,9 +13,14 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Authenticate with Google Sheets API
-const credentials = require('./credentials.json'); // Path to your credentials file
-const sheets = google.sheets({ version: 'v4', auth: credentials });
+// Authenticate with Google Sheets API using credentials from environment variable
+const credentials = JSON.parse(process.env.credentials_json); // Parse the environment variable content
+const auth = new google.auth.GoogleAuth({
+  credentials: credentials,
+  scopes: ['https://www.googleapis.com/auth/spreadsheets'], // Add the necessary scopes
+});
+
+const sheets = google.sheets({ version: 'v4', auth });
 
 // Your Google Sheet ID (from the URL of the sheet)
 const spreadsheetId = 'YOUR_GOOGLE_SHEET_ID';
@@ -23,7 +28,7 @@ const spreadsheetId = 'YOUR_GOOGLE_SHEET_ID';
 // Handle POST request for form submission
 app.post('/submit-form', async (req, res) => {
   const formData = req.body;
-  
+
   try {
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: spreadsheetId,
