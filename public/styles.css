@@ -26,10 +26,18 @@ body {
   .slogan {
     text-align: center;
     color: #ff0000;
-    font-size: 18px;
+    font-size: 24px;
     font-style: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
+  hr {
+    border: none;
+    border-top: 2px solid #ccc; /* Adjust thickness and color */
+    margin: 20px 0;
+  }
+  
+
   form {
     display: flex;
     flex-direction: column;
