@@ -15,29 +15,13 @@ app.use(bodyParser.json());
 
 // Authenticate with Google Sheets API using credentials from environment variable
 const credentials = JSON.parse(process.env.credentials_json); // Parse the environment variable content
-const auth = new google.auth.GoogleAuth({
-  credentials: credentials,
-  scopes: ['https://www.googleapis.com/auth/spreadsheets'], // Add the necessary scopes
-});
+const { client_email, private_key } = credentials;
+const auth = new google.auth.JWT(client_email, null, private_key, ['https://www.googleapis.com/auth/spreadsheets']);
 
 const sheets = google.sheets({ version: 'v4', auth });
 
-// Your Google Sheet ID (from the URL of the sheet)
 const spreadsheetId = '1o6p-Wub_hCsqQYc-EJS_5m6bGUc4Ya0UP3cTH_RZm98';
 
-async function testGoogleAuth() {
-  try {
-    const res = await sheets.spreadsheets.get({
-      spreadsheetId: spreadsheetId,
-    });
-    console.log('Google Sheets Data:', res.data);
-  } catch (error) {
-    console.error('Error fetching from Google Sheets:', error);
-  }
-}
-testGoogleAuth();
-
-// Handle POST request for form submission
 app.post('/submit-form', async (req, res) => {
   const formData = req.body;
 
