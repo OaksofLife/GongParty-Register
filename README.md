@@ -28,6 +28,7 @@ Middleware: body-parser, cors, dotenv
 
 To use or preview the application locally:
 
-Clone or download the repository:
-git clone https://your-repo-url.git
-cd project-folder
+1. Clone or download the repository:
+   ```bash
+   git clone https://your-repo-url.git
+   cd project-folder
