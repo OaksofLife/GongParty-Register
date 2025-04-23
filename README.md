@@ -25,3 +25,9 @@ Backend: Node.js, Express.js
 API: Google Sheets API (v4)
 
 Middleware: body-parser, cors, dotenv
+
+To use or preview the application locally:
+
+Clone or download the repository:
+git clone https://your-repo-url.git
+cd project-folder
